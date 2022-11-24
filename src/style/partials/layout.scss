@@ -2,7 +2,6 @@
     LAYOUT
 ---------------------*/
 .container{
-    max-width: 81.25rem;
+    max-width: var(--container-size);
     margin: auto;
-    background-color: aquamarine;
 }
