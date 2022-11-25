@@ -1,6 +1,10 @@
 <script>
+import AppHero from './AppHero.vue';
 export default {
   name: 'AppHeader',
+  components: {
+    AppHero,
+  },
   data() {
     return{
       links: [
@@ -72,10 +76,11 @@ export default {
     <div class="container">
       <img src="../assets/dc-logo.png" alt="Logo">
       <ul>
-        <li v-for="(link, index) in links" :class="{active: link.active}" @click.prevent="changeLink(index)"><a :href="link.href">{{ link.label }}</a></li>
+        <li v-for="(link, index) in links" :class="{active: link.active}" @click.prevent="changeLink(index)"><a :href="link.href"><strong>{{ link.label }}</strong></a></li>
       </ul>
     </div>
   </header>
+  <AppHero/>
 </template>
 
 <style lang="scss" scoped>
@@ -95,7 +100,8 @@ export default {
 
     li {
       padding: 2.1875rem .625rem 2.1875rem .625rem;
-      text-align: center;
+      font-size: .75rem;
+      font-style: bold;
 
       a {
         text-decoration-line: none;

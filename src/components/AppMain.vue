@@ -1,12 +1,12 @@
 <script>
 export default {
-  name: 'AppMain'
+  name: 'AppMain',
+
 }
 </script>
 
 <template>
-  <main class="container">
-    <h1>--> Content goes here</h1>
+  <main>
   </main>
   <nav class="container main-nav">
     <div class="card">
