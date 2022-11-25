@@ -5,3 +5,12 @@
     max-width: var(--container-size);
     margin: auto;
 }
+
+.container-fl{
+    max-width: var(--container-fl);
+}
+
+.container-rt{
+    max-width: var(--container-rt);
+    min-width: 50%;
+}

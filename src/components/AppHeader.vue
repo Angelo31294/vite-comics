@@ -1,57 +1,112 @@
 <script>
 export default {
-  name: 'AppHeader'
-}
-</script>
-
-<template>
-  <header class="container">
-    <img src="../assets/dc-logo.png" alt="Logo">
-    <ul>
-      <li><a href="">CHARACTERS</a></li>
-      <li><a class="active" href="">COMICS</a></li>
-      <li><a href="">MOVIES</a></li>
-      <li><a href="">TV</a></li>
-      <li><a href="">GAMES</a></li>
-      <li><a href="">COLLECTIBLES</a></li>
-      <li><a href="">VIDEO</a></li>
-      <li><a href="">FANS</a></li>
-      <li><a href="">NEWS</a></li>
-      <li><a href="">SHOP</a></li>
-    </ul>
-  </header>
-</template>
-
-<style lang="scss" scoped>
-header{
-  display: flex;
-  justify-content: space-between;
-  padding: .625rem .3125rem;
-
-  img{
-    width: 5rem;
-    height: 5rem;
-  }
-
-  ul{
-    display: flex;
-    list-style: none;
-    align-items: center;
-
-    a{
-      display: inline-block;
-      padding: .625rem;
-      text-decoration: none;
-      color: var(--second-color);
-      font-size: .75rem;
-
-      &.active{
-        color: var(--third-color);
-        border-bottom: 3px solid var(--third-color);
-      }
+  name: 'AppHeader',
+  data() {
+    return{
+      links: [
+        {
+          href: '#',
+          label: 'CHARACTERS',
+          active: false
+        },
+        {
+          href: '#',
+          label: 'COMICS',
+          active: true
+        },
+        {
+          href: '#',
+          label: 'MOVIES',
+          active: false
+        },
+        {
+          href: '#',
+          label: 'TV',
+          active: false
+        },
+        {
+          href: '#',
+          label: 'GAMES',
+          active: false
+        },
+        {
+          href: '#',
+          label: 'VIDEO',
+          active: false
+        },
+        {
+          href: '#',
+          label: 'FANS',
+          active: false
+        },
+        {
+          href: '#',
+          label: 'NEWS',
+          active: false
+        },
+        {
+          href: '#',
+          label: 'SHOP',
+          active: false
+        }
+      ]
+    }
+  },
+  methods: {
+    changeLink(index) {
+      this.links.forEach((elm, i) =>{
+        if( i === index ) {
+          elm.active = true;
+        } else {
+          elm.active = false;
+        }
+      });
     }
   }
 }
 
+</script>
+
+<template>
+  <header>
+    <div class="container">
+      <img src="../assets/dc-logo.png" alt="Logo">
+      <ul>
+        <li v-for="(link, index) in links" :class="{active: link.active}" @click.prevent="changeLink(index)"><a :href="link.href">{{ link.label }}</a></li>
+      </ul>
+    </div>
+  </header>
+</template>
+
+<style lang="scss" scoped>
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img{
+    max-width: 4.375rem;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+
+    li {
+      padding: 2.1875rem .625rem 2.1875rem .625rem;
+      text-align: center;
+
+      a {
+        text-decoration-line: none;
+        color: var(--second-color);
+      }
+      &.active{
+        color: var(--third-color);
+        border-bottom: .25rem solid var(--third-color);
+      }
+    }
+  }
+}
 
 </style>
