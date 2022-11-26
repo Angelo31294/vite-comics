@@ -1,101 +1,27 @@
 <script>
+import AppFooterTop from "./AppFooterTop.vue";
+import AppFooterBottom from "./AppFooterBottom.vue";
 export default {
-  name: 'AppFooter'
-}
+  name: "AppFooter",
+  components: {
+    AppFooterTop,
+    AppFooterBottom,
+  },
+};
 </script>
 
 <template>
-  <footer class="container">
-    <!-- footer top -->
-    <div class="footer-top">
-
-        <div class="container-fl">
-          <ul>
-            <li><h4>DC COMICS</h4></li>
-            <li><a href=""><small>Characters</small></a></li>
-            <li><a href=""><small>Comics</small></a></li>
-            <li><a href=""><small>Movies</small></a></li>
-            <li><a href=""><small>TV</small></a></li>
-            <li><a href=""><small>Games</small></a></li>
-            <li><a href=""><small>Videos</small></a></li>
-            <li><a href=""><small>News</small></a></li>
-          </ul>
-          <ul>
-            <li><h4>DC</h4></li>
-            <li><a href=""><small>Term of Use</small></a></li>
-            <li><a href=""><small>Privacy Policy (New)</small></a></li>
-            <li><a href=""><small>Ad Choices</small></a></li>
-            <li><a href=""><small>Advertising</small></a></li>
-            <li><a href=""><small>Job</small></a></li>
-            <li><a href=""><small>Subscription</small></a></li>
-            <li><a href=""><small>Talent Workshops</small></a></li>
-            <li><a href=""><small>CPSC Certificates</small></a></li>
-            <li><a href=""><small>Rating</small></a></li>
-            <li><a href=""><small>Shop Help</small></a></li>
-            <li><a href=""><small>Contact Us</small></a></li>
-          </ul>
-          <ul>
-            <li><h4>SITES</h4></li>
-            <li><a href=""><small>DC</small></a></li>
-            <li><a href=""><small>MAD Magazine</small></a></li>
-            <li><a href=""><small>DC kids</small></a></li>
-            <li><a href=""><small>DC Univers</small></a></li>
-            <li><a href=""><small>DC Power Visa</small></a></li>
-          </ul>
-          <ul>
-            <li><h4>SHOP</h4></li>
-            <li><a href=""><small>Shop DC</small></a></li>
-            <li><a href=""><small>Shop DC Collectibles</small></a></li>
-          </ul>
-        </div>
-        <div class="container-rt"></div>
-
-        <!-- footer bottom -->
-      <div class="footer-bottom"></div>
-    </div>
-
+  <footer>
+    <AppFooterTop />
   </footer>
+  <AppFooterBottom />
 </template>
 
 <style lang="scss" scoped>
-  .footer-top{
-    max-height: 25rem;
-    background-image: url(../assets/footer-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: space-around;
-        
-      .container-fl{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        padding: 1.25rem 0;
-  
-        ul{
-          list-style: none;
-          width: 30%;
-          li{
-    
-            h4{
-              color: var(--first-color);
-            }
-    
-            a{
-              text-decoration: none;
-              color: var(--fourth-color);
-              font-size: .6875rem;
-            }
-          }
-  
-        }
-      }
-      .container-rt{
-        background-image: url(../assets/dc-logo-bg.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
+footer {
+  background-image: url(../assets/footer-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 </style>
